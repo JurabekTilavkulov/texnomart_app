@@ -1,13 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
+import 'package:texnomart_app/data/utils/app_routes.dart';
 import 'package:texnomart_app/data/utils/app_svg.dart';
 import '../../../data/models/model_recommended.dart';
 
 Widget itemBuldForRecommended(BuildContext context,int index,ModelRecommendedProduct? modelRecommendedProduct,int n){
+
   return GestureDetector(
     onTap: () {
-
+      Navigator.pushNamed(context, AppRoutes.mainPage,
+          arguments:modelRecommendedProduct.dataLista!.list![n].products![index].id??0 );
     },
     //modelProducts.dataMap!.datalist![index].name!
     child: Column(
@@ -24,35 +26,87 @@ Widget itemBuldForRecommended(BuildContext context,int index,ModelRecommendedPro
                     top: 15,
                     width: MediaQuery.of(context).size.width*0.33,
                     //height:MediaQuery.of(context).size.height*0.22 ,
-                    child: Image.network("${modelRecommendedProduct!.dataLista!.list![n].products![index].image}")),
+                    child: Image.network("${modelRecommendedProduct!.dataLista!.list![n].products![index].image}")
+                ),
+                modelRecommendedProduct.dataLista!.list![n].products![index].stickersList!.isNotEmpty ?
                 Positioned(
-                  left: MediaQuery.of(context).size.width*0.29,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        height: 20,
-                        decoration: const BoxDecoration(
-                          boxShadow: [BoxShadow(blurRadius:1,color: Colors.grey)],
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                        child: SvgPicture.asset(AppSvg.likeBlack),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox( width: MediaQuery.of(context).size.width*0.1,
+                            height: MediaQuery.of(context).size.height*0.02,),
+                          Container(
+                            width: MediaQuery.of(context).size.width*0.17,
+                            height: MediaQuery.of(context).size.height*0.02,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.red
+                            ),
+                            child: Center(child: Text(modelRecommendedProduct.dataLista!.list![n].products![index].stickersList![0].name??'',style: const TextStyle(fontSize: 9,color: Colors.white),)),
+                          )
+                        ],
                       ),
-                      const SizedBox(height: 10),
-                      Container(
-                        height: 20,
-                        decoration: const BoxDecoration(
-                          boxShadow: [BoxShadow(blurRadius:1,color: Colors.grey)],
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                        child: SvgPicture.asset(AppSvg.compareBlack),
-                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Container(
+                            height: 20,
+                            decoration: const BoxDecoration(
+                              boxShadow: [BoxShadow(blurRadius:1,color: Colors.grey)],
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: SvgPicture.asset(AppSvg.likeBlack),
+                          ),
+                          const SizedBox(height: 10),
+                          Container(
+                            height: 20,
+                            decoration: const BoxDecoration(
+                              boxShadow: [BoxShadow(blurRadius:1,color: Colors.grey)],
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: SvgPicture.asset(AppSvg.compareBlack),
+                          ),
 
+                        ],
+                      ),
                     ],
-                  ),
+                  )
+                ) :
+                Positioned(
+                   left: MediaQuery.of(context).size.width*0.29,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          height: 20,
+                          decoration: const BoxDecoration(
+                            boxShadow: [BoxShadow(blurRadius:1,color: Colors.grey)],
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset(AppSvg.likeBlack),
+                        ),
+                        const SizedBox(height: 10),
+                        Container(
+                          height: 20,
+                          decoration: const BoxDecoration(
+                            boxShadow: [BoxShadow(blurRadius:1,color: Colors.grey)],
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset(AppSvg.compareBlack),
+                        ),
+
+                      ],
+                    )
                 )
               ],
             )),

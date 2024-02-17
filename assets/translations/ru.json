@@ -10,5 +10,15 @@
   "profile": "Профиль",
   "hitgoods": "Хит Товар",
   "newgoods": "Новые товары",
-  "recommend": "Мы рекомендуем"
+  "recommend": "Мы рекомендуем",
+  "news_blogs": "Новости и блоги",
+  "tocard": "на Карзинке",
+  "code": "Код:",
+  "monthlyPrice": "Ежемесячный платеж",
+  "deleteAll": "Удалить все",
+  "choseAll": "Выбратe все",
+  "total": "итог",
+  "product": "продукт",
+  "termPayment": "Срочный платеж"
+
 }

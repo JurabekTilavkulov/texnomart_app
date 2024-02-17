@@ -4,11 +4,13 @@ import 'package:svg_flutter/svg.dart';
 import 'package:texnomart_app/data/utils/app_svg.dart';
 
 import '../../../data/models/model_products.dart';
+import '../../../data/utils/app_routes.dart';
 
 Widget itemBuldForPageNews(BuildContext context,int index,ModelProducts? modelProducts){
   return GestureDetector(
     onTap: () {
-
+      Navigator.pushNamed(context, AppRoutes.mainPage,
+          arguments:modelProducts.dataMap!.datalist![index].id);
     },
     //modelProducts.dataMap!.datalist![index].name!
     child: Column(

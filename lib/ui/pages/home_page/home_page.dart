@@ -21,6 +21,7 @@ import '../../widgets/category_list.dart';
 import '../../widgets/home_page_slider_list.dart';
 import 'homePageItembuildNews.dart';
 import 'home_page_item_recommended.dart';
+import 'home_page_news_item.dart';
 
 
 
@@ -150,34 +151,33 @@ class HomePage extends StatelessWidget {
                       return Center(child: LoadingAnimationWidget.twoRotatingArc(color: Colors.amber, size: 50),);
                     }
                     else {
-                      return Center(child: Text("Error"),);
+                      return const Center(child: Text("Error"),);
                     }
 
                 },
                 ), 
                       SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height*0.03,
-                  child:  DotsIndicator(
-                position: stateCubit.indexSlider??0,
-                decorator: const DotsDecorator(
-                  activeColor: Colors.black,
-                ),
-                dotsCount: 7,
-                  ),
-                ) , 
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height*0.03,
+                        child:  DotsIndicator(
+                          position: stateCubit.indexSlider??0,
+                          decorator: const DotsDecorator(
+                            activeColor: Colors.black,
+                          ),
+                          dotsCount: 7,
+                        ),
+                      ) ,
                       BlocBuilder<SpecialbrandBloc, SpecialbrandState>(
-                  builder: (context, state) {
-                   if(state is SpecialbrandSuccessState){
-
-                     return SizedBox(
-                       width: MediaQuery.of(context).size.width,
-                       height: MediaQuery.of(context).size.height*0.08,
-                       child: ListView.builder(itemBuilder: (context, index) {
-                         return specialBrandsitem(context,index,state.modelSpecialBrands);
-                         },
-                         scrollDirection:Axis.horizontal,
-                         itemCount: state.modelSpecialBrands.data?.dataList?.length??0,),
+                        builder: (context, state) {
+                          if(state is SpecialbrandSuccessState){
+                            return SizedBox(
+                              width: MediaQuery.of(context).size.width,
+                              height: MediaQuery.of(context).size.height*0.08,
+                              child: ListView.builder(itemBuilder: (context, index) {
+                                return specialBrandsitem(context,index,state.modelSpecialBrands);
+                                },
+                                scrollDirection:Axis.horizontal,
+                                itemCount: state.modelSpecialBrands.data?.dataList?.length??0,),
                      );
                    }
                    else if(state is SpecialbrandInitialState){
@@ -288,6 +288,42 @@ class HomePage extends StatelessWidget {
                             return const Center(child: Text("Error"),);}
                           },
                       ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Divider(color: Color(0xFFC2C2C1),),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("   ${LocalKeys.news_blogs.tr()}",style: const TextStyle(fontSize: 14,fontWeight: FontWeight.bold)),
+                          TextButton(onPressed: () {
+
+                          },
+                              child: Text( "${LocalKeys.all.tr()}>",style: const TextStyle(fontSize: 14,color: Colors.grey)))
+                        ],),
+                      BlocBuilder<GetNewsCubit, GetNewsState>(
+                        builder: (context, state) {
+                          if(state is GetNewsSuccessState){
+                            return Container(
+                              margin: const EdgeInsets.only(left: 10),
+                              width: MediaQuery.of(context).size.width,
+                              height: MediaQuery.of(context).size.height*0.28,
+                              child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder:(context, index) {
+                                  return itemNewsHomePage(context, index,state.modelNews!);
+                                },
+                                itemCount: state.modelNews?.data?.list?.length??0,
+                              ),
+                            );
+                          }
+                          else if(state is GetNewsInitialState){
+                            return Container();
+                          }
+                          else {
+                            return const Center(child: Text("Error"),);}
+                        },
+                      ),
                       BlocBuilder<GetRecommendetCollectionCubit, GetRecommendetCollectionState>(
                         builder: (context, state) {
                           if(state is GetRecommendetCollectionSuccessState){
@@ -361,6 +397,7 @@ class HomePage extends StatelessWidget {
                             return const Center(child: Text("Error"),);}
                         },
                       ),
+
 
                     ],),);
                 },),

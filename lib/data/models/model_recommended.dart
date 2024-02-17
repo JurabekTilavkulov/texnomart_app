@@ -91,8 +91,8 @@ class Products {
   int? reviewsCount;
   int? reviewsAverage;
   int? allCount;
-  List<Stickers>? stickers;
-  List<SaleMonths>? saleMonths;
+  List<Stickers>? stickersList;
+  List<SaleMonths>? saleMonthsList;
 
   Products(
       {this.id,
@@ -105,8 +105,8 @@ class Products {
         this.reviewsCount,
         this.reviewsAverage,
         this.allCount,
-        this.stickers,
-        this.saleMonths});
+        this.stickersList,
+        this.saleMonthsList});
 
   Products.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -120,36 +120,36 @@ class Products {
     reviewsAverage = json['reviews_average'];
     allCount = json['all_count'];
     if (json['stickers'] != null) {
-      stickers = <Stickers>[];
+      stickersList = <Stickers>[];
       json['stickers'].forEach((v) {
-        stickers!.add(new Stickers.fromJson(v));
+        stickersList!.add(Stickers.fromJson(v));
       });
     }
     if (json['sale_months'] != null) {
-      saleMonths = <SaleMonths>[];
+      saleMonthsList = <SaleMonths>[];
       json['sale_months'].forEach((v) {
-        saleMonths!.add(new SaleMonths.fromJson(v));
+        saleMonthsList!.add(SaleMonths.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['image'] = this.image;
-    data['availability'] = this.availability;
-    data['axiom_monthly_price'] = this.axiomMonthlyPrice;
-    data['sale_price'] = this.salePrice;
-    data['old_price'] = this.oldPrice;
-    data['reviews_count'] = this.reviewsCount;
-    data['reviews_average'] = this.reviewsAverage;
-    data['all_count'] = this.allCount;
-    if (this.stickers != null) {
-      data['stickers'] = this.stickers!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = {};
+    data['id'] = id;
+    data['name'] = name;
+    data['image'] = image;
+    data['availability'] = availability;
+    data['axiom_monthly_price'] = axiomMonthlyPrice;
+    data['sale_price'] = salePrice;
+    data['old_price'] = oldPrice;
+    data['reviews_count'] = reviewsCount;
+    data['reviews_average'] = reviewsAverage;
+    data['all_count'] = allCount;
+    if (stickersList != null) {
+      data['stickers'] = stickersList!.map((v) => v.toJson()).toList();
     }
-    if (this.saleMonths != null) {
-      data['sale_months'] = this.saleMonths!.map((v) => v.toJson()).toList();
+    if (saleMonthsList != null) {
+      data['sale_months'] = saleMonthsList!.map((v) => v.toJson()).toList();
     }
     return data;
   }

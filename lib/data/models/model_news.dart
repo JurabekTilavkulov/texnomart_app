@@ -26,7 +26,7 @@ class ModelNews {
 }
 
 class Data {
-  List<Data>? list;
+  List<DataModel>? list;
   Links? links;
   Meta? meta;
 
@@ -34,9 +34,9 @@ class Data {
 
   Data.fromJson(Map<String, dynamic> json) {
     if (json['data'] != null) {
-      list = <Data>[];
+      list =[];
       json['data'].forEach((v) {
-        list!.add(new Data.fromJson(v));
+        list!.add(DataModel.fromJson(v));
       });
     }
     links = json['links'] != null ? new Links.fromJson(json['links']) : null;
@@ -44,17 +44,17 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> map_data = {};
+    final Map<String, dynamic> mapData = {};
     if (list != null) {
-      map_data['data'] = list!.map((v) => v.toJson()).toList();
+      mapData['data'] = list!.map((v) => v.toJson()).toList();
     }
     if (links != null) {
-      map_data['links'] = links!.toJson();
+      mapData['links'] = links!.toJson();
     }
     if (meta != null) {
-      map_data['meta'] = meta!.toJson();
+      mapData['meta'] = meta!.toJson();
     }
-    return map_data;
+    return mapData;
   }
 }
 

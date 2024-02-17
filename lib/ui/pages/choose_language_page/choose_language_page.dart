@@ -14,7 +14,7 @@ class ChooseLanguagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  BlocBuilder<LanguageBloc, Locale>(
   builder: (context, state) {
-    print('state.chooseLangauagaPage=${state}');
+
     return Scaffold(
 
       backgroundColor:const Color(0xFFfbc100),
@@ -33,7 +33,7 @@ class ChooseLanguagePage extends StatelessWidget {
                   context.read<LanguageBloc>().add(ChangeLanguageEvent(const Locale("uz"))); // bloc da oz'gartirish uchun
 
                   Future.delayed(const Duration(seconds: 1),() {
-                    Navigator.pushReplacementNamed(context, AppRoutes.mainPage);
+                    Navigator.pushReplacementNamed(context, AppRoutes.mainPage,arguments: 0);
                   },);
                 },
                   child: Container(

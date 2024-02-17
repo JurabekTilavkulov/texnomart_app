@@ -10,5 +10,15 @@
   "profile": "Profile",
   "hitgoods": "Hit goods",
   "newgoods": "New goods",
-  "recommend": "We recommend"
+  "recommend": "We recommend",
+  "news_blogs": "News and blogs",
+  "tocard": "put the Card",
+  "code": "Code:",
+  "monthlyPrice": "Monthly Prize",
+  "deleteAll": "Delete All",
+  "choseAll": "Choose All",
+  "total": "Total",
+  "product": "product",
+  "termPayment": "Urgent payment"
+
 }
