@@ -19,6 +19,26 @@
   "choseAll": "Choose All",
   "total": "Total",
   "product": "product",
-  "termPayment": "Urgent payment"
+  "termPayment": "Urgent payment",
+  "smartphones_gadgets": "Smartphones gadgets",
+  "Computer": "Computer equipment",
+  "Home": "Home appliances",
+  "Office": "Office equipment",
+  "Kitchen": "Kitchen appliances",
+  "Household": "Household Payment",
+  "Goods": "Goods for cars",
+  "Climate": "Climate Control",
+  "telecards": "TV set and telecards",
+  "Audio": "Audio and Wi-Fi",
+  "Health": "Health & Beauty",
+  "Products": "Products for children",
+  "Sports": "Sports & Hobbies",
+  "Game": "Game consoles",
+  "Household_goods": "Household goods",
+  "Promotions": "Promotions and discounts",
+  "Enter": "Enter",
+  "enterToSystem": "Sign in to see your orders",
+  "tell_number": "Telephone number"
+
 
 }

@@ -25,7 +25,7 @@ class AppRoutes{
       case AppRoutes.splashPage:return CupertinoPageRoute(builder: (context) => SplashPage(),);
       case AppRoutes.chooseLanguagePage:return CupertinoPageRoute(builder: (context) => const ChooseLanguagePage(),);
       case AppRoutes.homePage:return CupertinoPageRoute(builder: (context) =>  HomePage(),);
-      case AppRoutes.mainPage:return CupertinoPageRoute(builder: (context) =>    MainPage(idProduct: settings.arguments as int),);
+      case AppRoutes.mainPage:return CupertinoPageRoute(builder: (context) =>    MainPage(idProduct: settings.arguments as int),);// Null is not a suptype is int
       case AppRoutes.cardPage:return CupertinoPageRoute(builder: (context) =>   CardPage(),);
       case AppRoutes.catalogPage:return CupertinoPageRoute(builder: (context) =>  const CatalogPage(),);
       case AppRoutes.orderPage:return CupertinoPageRoute(builder: (context) =>  const OrderPage(),);

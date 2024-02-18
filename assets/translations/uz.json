@@ -19,7 +19,29 @@
   "choseAll": "Hammasi",
   "total": "Jami",
   "product": "Maxsulot",
-  "termPayment": "Muddatli to'lov"
+  "termPayment": "Muddatli to'lov",
+  "smartphonesgadgets": "Smartfon va gadjetlar",
+  "Computer": "Kompyuter texnikasi",
+  "Home": "Maishiy texnika",
+  "Office": "Ofis jixozlari",
+  "Kitchen": "Oshxona uchun texnik",
+  "Household": "Uy uchun idishlar",
+  "Goods": "Aftomabile uchun mahsulotlar",
+  "Climate": "Iqlim texnikas",
+  "telecards": "Telivizorlar va telikartalar",
+  "Audio": "Auditexnika va Wi-Fi",
+  "Health": "Go'zallik va salomatlik",
+  "Products": "Bolalar uchun maxsulotlar",
+  "Sports": "Sport va sevimli mashg'ulotlar",
+  "Game": "O'yin konsollari",
+  "Household_goods": "Maishiy maxsulotlar",
+  "Promotions": "Aksiya va chegirmalar",
+  "Enter": "Kirish",
+  "enterToSystem": "Buyurmalarizni ko'rish uchun tizimga kiring",
+  "tell_number": "Telifon raqami"
+
+
+
 
 
 

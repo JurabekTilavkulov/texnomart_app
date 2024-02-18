@@ -53,7 +53,7 @@ class ChooseLanguagePage extends StatelessWidget {
                   context.read<LanguageBloc>().add(ChangeLanguageEvent(const Locale("en")));
 
                   Future.delayed(const Duration(seconds: 1),() {
-                    Navigator.pushReplacementNamed(context, AppRoutes.mainPage);
+                    Navigator.pushReplacementNamed(context, AppRoutes.mainPage,arguments: 0);
                   },);
                 },
                   child: Container(
@@ -74,7 +74,7 @@ class ChooseLanguagePage extends StatelessWidget {
 
                   Future.delayed(const Duration(seconds: 1),() {
 
-                    Navigator.pushReplacementNamed(context, AppRoutes.mainPage);
+                    Navigator.pushReplacementNamed(context, AppRoutes.mainPage,arguments: 0);
                   },);
                 },
                   child: Container(

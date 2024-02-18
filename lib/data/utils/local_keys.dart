@@ -19,5 +19,28 @@ class LocalKeys{
   static const String total="total";
   static const String product="product";
   static const String termPayment="termPayment";
+  static const String smartphonesgadgets="smartphonesgadgets";
+  static const String Computer="Computer";
+  static const String Home="Home";
+  static const String Office="Office";
+  static const String Kitchen="Kitchen";
+  static const String Household="Household";
+  static const String Goods="Goods";
+  static const String Climate="Climate";
+  static const String telecards="telecards";
+  static const String Audio="Audio";
+  static const String Health="Health";
+  static const String Products="Products";
+  static const String Sports="Sports";
+  static const String Game="Game";
+  static const String Household_goods="Household_goods";
+  static const String Promotions="Promotions";
+  static const String Enter="Enter";
+  static const String enterToSystem="enterToSystem";
+  static const String tell_number="tell_number";
+
+
+
+
 
 }
