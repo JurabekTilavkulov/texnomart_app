@@ -9,7 +9,7 @@ import '../../../data/utils/app_routes.dart';
 Widget itemBuldForPageNews(BuildContext context,int index,ModelProducts? modelProducts){
   return GestureDetector(
     onTap: () {
-      Navigator.pushNamed(context, AppRoutes.mainPage,
+      Navigator.pushNamed(context, AppRoutes.detailPage,
           arguments:modelProducts.dataMap!.datalist![index].id);
     },
     //modelProducts.dataMap!.datalist![index].name!

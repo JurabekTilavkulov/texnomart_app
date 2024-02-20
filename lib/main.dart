@@ -4,17 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:texnomart_app/data/services/DB/date_base_service.dart';
-
 import 'package:texnomart_app/data/utils/app_routes.dart';
 import 'data/bloc/internet_blocs/detail_bloc/detail_bloc.dart';
 import 'data/bloc/language_bloc/language_bloc.dart';
 import 'data/cubit/cubit_helper/cubit_helper.dart';
-import 'data/cubit/internet_cubits/get_news_cubit/get_news_cubit.dart';
-import 'data/cubit/internet_cubits/get_product_cubit_news/get_product_cubit.dart';
-import 'data/cubit/internet_cubits/get_product_cubit_xit/get_product_xit_cubit.dart';
-import 'data/cubit/internet_cubits/get_recommended_cubit/get_recommendet_collection_cubit.dart';
 import 'data/services/internet_service/net_service.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +18,9 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   await Hive.initFlutter();
   await Hive.openBox("tovarlar");
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(EasyLocalization(
       supportedLocales: const [
         Locale('en'),
@@ -39,12 +38,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => GetProductCubitNews(NetService(Dio()))),
-        BlocProvider(create: (context) => GetProductXitCubit(netService: NetService(Dio()))),
-        BlocProvider(create: (context) => GetRecommendetCollectionCubit(NetService(Dio()))),
-        BlocProvider(create: (context) => GetNewsCubit(NetService(Dio()))),
         BlocProvider(create: (context) => CubitHelper(dataBaseservice: DataBaseservice())),
         BlocProvider(create: (context) => DetailBloc(NetService(Dio()))),
       ],

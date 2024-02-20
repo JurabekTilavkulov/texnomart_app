@@ -8,6 +8,7 @@ class AppSvg{
   static const String compareBlack='assets/svg/compare-ico.125e33b.svg';
   static const String star='assets/svg/star.svg';
   static const String right='assets/svg/arrow-right-20.3d1992f.svg';
+  static const String texnomartLogo='assets/svg/texnomart-logo.fcda25c.svg';
   //katalog
 
   static const String smartfonlar='assets/svg/catalog/smartfonlar.svg';

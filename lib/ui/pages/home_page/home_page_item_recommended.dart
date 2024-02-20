@@ -8,7 +8,7 @@ Widget itemBuldForRecommended(BuildContext context,int index,ModelRecommendedPro
 
   return GestureDetector(
     onTap: () {
-      Navigator.pushNamed(context, AppRoutes.mainPage,
+      Navigator.pushNamed(context, AppRoutes.detailPage,
           arguments:modelRecommendedProduct.dataLista!.list![n].products![index].id??0 );
     },
     //modelProducts.dataMap!.datalist![index].name!

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "788885112575",
+    "project_id": "texnomartapp-d01b5",
+    "storage_bucket": "texnomartapp-d01b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788885112575:android:afc0d651d533c95632eeca",
+        "android_client_info": {
+          "package_name": "com.example.texnomart_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPXBGPz9vAiMwBSdIcrad67t6zsgjoybg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
